@@ -1,8 +1,15 @@
 <resources>
+    //App
     <!-- App -->
     <string name="app_name">Football-League</string>
+
+    //LoginFragment
+    <string name="login_fragment_label">Login</string>
+    <string name="textview_login_text">Please login</string>
+    <string name="hint_name_login_text">Please enter your name</string>
+    <string name="hint_password_login_text">Please enter your password</string>
+    <string name="button_login_text">Login</string>
 
     <!-- Strings splashActivity -->
     <string name="text_splash_activity">Loading…</string>
 </resources>
-
