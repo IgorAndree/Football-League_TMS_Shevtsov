@@ -1,9 +1,8 @@
 <resources>
-    //App
-    <!-- App -->
+    <!-- Strings application -->
     <string name="app_name">Football-League</string>
 
-    //LoginFragment
+    <!-- Strings loginFragment -->
     <string name="login_fragment_label">Login</string>
     <string name="textview_login_text">Please login</string>
     <string name="hint_name_login_text">Please enter your name</string>
