@@ -2,6 +2,9 @@
     <!-- Strings application -->
     <string name="app_name">Football-League</string>
 
+    <!-- Strings splashActivity -->
+    <string name="text_splash_activity">Loading…</string>
+
     <!-- Strings loginFragment -->
     <string name="login_fragment_label">Login</string>
     <string name="textview_login_text">Please login</string>
@@ -9,6 +12,8 @@
     <string name="hint_password_login_text">Please enter your password</string>
     <string name="button_login_text">Login</string>
 
-    <!-- Strings splashActivity -->
-    <string name="text_splash_activity">Loading…</string>
+    <!-- Strings startFragment -->
+    <string name="button_start_next_text">Go to clubs</string>
+    <string name="button_start_back_text">Back to login</string>
+
 </resources>

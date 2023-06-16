@@ -1,6 +1,10 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    //Add kapt
+    id 'kotlin-kapt'
+    //Add hilt
+    id 'com.google.dagger.hilt.android'
 }
 
 android {
@@ -27,33 +31,36 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    buildFeatures {
-        viewBinding true
-        dataBinding true
-    }
+
     kotlinOptions {
         jvmTarget = '1.8'
     }
     //Add viewBinding
-    viewBinding {
-        enabled = true
+    buildFeatures {
+        viewBinding true
+        dataBinding true
     }
-}
 
-dependencies {
-
-    implementation 'androidx.core:core-ktx:1.10.1'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.9.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-    //Add navigation
-    androidTestImplementation "androidx.navigation:navigation-testing:2.7.0-beta01"
-    implementation "androidx.navigation:navigation-fragment-ktx:2.7.0-beta01"
-    implementation "androidx.navigation:navigation-ui-ktx:2.7.0-beta01"
-    implementation "androidx.navigation:navigation-dynamic-features-fragment:2.7.0-beta01"
-
+    dependencies {
+        implementation 'androidx.core:core-ktx:1.10.1'
+        implementation 'androidx.appcompat:appcompat:1.6.1'
+        implementation 'com.google.android.material:material:1.9.0'
+        implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+        implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+        testImplementation 'junit:junit:4.13.2'
+        androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+        androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+        //Add navigation
+        androidTestImplementation "androidx.navigation:navigation-testing:2.7.0-beta01"
+        implementation "androidx.navigation:navigation-fragment-ktx:2.7.0-beta01"
+        implementation "androidx.navigation:navigation-ui-ktx:2.7.0-beta01"
+        implementation "androidx.navigation:navigation-dynamic-features-fragment:2.7.0-beta01"
+        //Add glide
+        implementation 'com.github.bumptech.glide:glide:4.15.1'
+        //Add viewModel
+        implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
+        //Add hilt
+        implementation 'com.google.dagger:hilt-android:2.44'
+        kapt 'com.google.dagger:hilt-compiler:2.44'
+    }
 }
