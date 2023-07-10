@@ -5,31 +5,26 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.football_league.domain.models.DomainLeagues
-import com.example.football_league.domain.use_cases.LeaguesUseCase
+import com.example.football_league.domain.use_cases.GetClubsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-open class LeaguesViewModel @Inject constructor(
-    private val leaguesUseCase: LeaguesUseCase
+open class ClubsViewModel @Inject constructor(
+    private val getClubsUseCase: GetClubsUseCase
 ) : ViewModel() {
-
-
-
-
-    private val _leaguesList = MutableLiveData<List<DomainLeagues>>()
-    val leaguesList: LiveData<List<DomainLeagues>> = _leaguesList
+// TODO Потом прекрепить к Фрагменту с клубами
+    private val _clubs = MutableLiveData<DomainLeagues>()
+    val clubs: LiveData<DomainLeagues> = _clubs
 
     init {
         viewModelScope.launch {
-            getLeagues()
-
+            getClubs()
         }
     }
 
-
-    private suspend fun getLeagues() {
-        _leaguesList.value = leaguesUseCase.getLeagues()
+    private suspend fun getClubs() {
+        _clubs.value = getClubsUseCase.getClubsById()
     }
 }

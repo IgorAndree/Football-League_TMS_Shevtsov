@@ -18,34 +18,30 @@ class LeaguesRecyclerAdapter(
 ) : RecyclerView.Adapter<LeaguesRecyclerAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val imageImageView: ImageView = itemView.findViewById(R.id.image)
-        val titleTextView: TextView = itemView.findViewById(R.id.title)
-        val descriptionTextView: TextView = itemView.findViewById(R.id.description)
-
+        val imageImageView: ImageView = itemView.findViewById(R.id.logo)
+        val titleTextView: TextView = itemView.findViewById(R.id.name)
+        val descriptionTextView: TextView = itemView.findViewById(R.id.country)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(
-                R.layout.item_leagues_layout, parent,
-                false
-            )
 
-        view.setOnClickListener {
+        val itemView = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_leagues_layout, parent, false)
+
+        itemView.setOnClickListener {
             onItemClickEvent(it)
         }
-
-        return ViewHolder(view)
+        return ViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.apply {
-            titleTextView.text = items[position].title
-            descriptionTextView.text = items[position].description
+            titleTextView.text = items[position].name
+            descriptionTextView.text = items[position].country
 
             Glide
                 .with(context)
-                .load(items[position].urlToImage)
+                .load(items[position].logo)
                 .into(imageImageView)
         }
     }

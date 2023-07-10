@@ -8,9 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.football_league.R
 import com.example.football_league.databinding.FragmentStartBinding
 import com.example.football_league.domain.models.DomainLeagues
-import com.example.football_league.R
 import com.example.football_league.presentation.adapters.LeaguesRecyclerAdapter
 import com.example.football_league.presentation.view_models.LeaguesViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -37,9 +37,9 @@ class StartFragment : Fragment() {
         binding.buttonNext.setOnClickListener {
             findNavController().navigate(R.id.action_StartFragment_to_ClubsFragment)
         }
-
         binding.buttonBack.setOnClickListener {
             findNavController().navigate(R.id.action_StartFragment_to_LoginFragment)
+
         }
     }
 
@@ -54,9 +54,10 @@ class StartFragment : Fragment() {
     }
 
     private fun initRecycler(leagues: List<DomainLeagues>) {
-        binding.leaguesRecycler.apply {
-            layoutManager = LinearLayoutManager(requireContext())
-            adapter = LeaguesRecyclerAdapter(items = leagues, context = context,
+        binding.recyclerLeagues.apply {
+            layoutManager = LinearLayoutManager (requireContext())
+              adapter = LeaguesRecyclerAdapter(context,
+                items = leagues,
                 onItemClickEvent = {
                     findNavController().navigate(R.id.action_StartFragment_to_ClubsFragment)
                 }
@@ -64,3 +65,4 @@ class StartFragment : Fragment() {
         }
     }
 }
+
