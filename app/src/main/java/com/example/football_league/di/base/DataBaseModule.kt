@@ -11,6 +11,8 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
+const val D_B_LEAGUES = "leagues_db"
+
 @Module
 @InstallIn(SingletonComponent::class)
 object DataBaseModule {
@@ -22,7 +24,7 @@ object DataBaseModule {
     ): LeaguesDatabase =
         Room.databaseBuilder(
             context, LeaguesDatabase::class.java,
-            "leagues_db"
+            D_B_LEAGUES
         )
             .fallbackToDestructiveMigration()
             .build()

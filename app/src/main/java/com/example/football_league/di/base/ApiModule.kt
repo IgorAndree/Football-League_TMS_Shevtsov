@@ -16,7 +16,6 @@ import javax.inject.Singleton
 object ApiModule {
     private const val URL = "https://api-football-v1.p.rapidapi.com/"
 
-
     @Singleton
     @Provides
     fun providesHttpLoggingInterceptor() = HttpLoggingInterceptor()
@@ -32,13 +31,10 @@ object ApiModule {
             .addInterceptor(httpLoggingInterceptor)
             .build()
 
-
-
     @Singleton
     @Provides
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit =
         Retrofit
-
             .Builder()
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(URL)
@@ -49,9 +45,7 @@ object ApiModule {
     @Provides
     fun providePostApiService(retrofit: Retrofit): LeaguesApi =
         retrofit.create(LeaguesApi::class.java)
-
-
-    }
+}
 
 
 

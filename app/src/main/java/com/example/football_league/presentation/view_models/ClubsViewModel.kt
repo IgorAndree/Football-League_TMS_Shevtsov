@@ -14,7 +14,7 @@ import javax.inject.Inject
 open class ClubsViewModel @Inject constructor(
     private val getClubsUseCase: GetClubsUseCase
 ) : ViewModel() {
-// TODO Потом прекрепить к Фрагменту с клубами
+    // TODO Потом прекрепить к Фрагменту с клубами
     private val _clubs = MutableLiveData<DomainLeagues>()
     val clubs: LiveData<DomainLeagues> = _clubs
 

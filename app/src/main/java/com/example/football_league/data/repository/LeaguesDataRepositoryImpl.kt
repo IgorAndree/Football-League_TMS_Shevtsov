@@ -15,15 +15,14 @@ class LeaguesDataRepositoryImpl @Inject constructor(
     private val leaguesLocal: LeaguesLocal
 ) : LeaguesRepository {
     override suspend fun getLeagues(): List<DataLeaguesDto> {
-        val leaguesList = leaguesRemote.getLeagues().leagues.orEmpty()
-
-        if (leaguesList.isNotEmpty()) {
-            leaguesList.forEach { leaguesDto ->
-                leaguesLocal.insertLeagues(leagues = leaguesDto.toLocalLeagues())
-            }
-        }
-
-        return leaguesList
+        val leaguesList = leaguesRemote.getLeagues().results.leagues
+       val values =  leaguesList.values.toMutableList()
+//        if (leaguesList.isNotEmpty()) {
+//            leaguesList.forEach { leaguesDto ->
+//                leaguesLocal.insertLeagues(leagues = values)
+//            }
+//        }
+        return values.toList()
     }
 
     override suspend fun getLocalLeagues(): List<LeaguesEntity> =

@@ -6,28 +6,21 @@ import com.google.gson.annotations.SerializedName
 
 data class DataLeaguesDto(
     @SerializedName("name")
-    val name: String,
-
+    val name: String?,
     @SerializedName("country")
-    val country: String,
-
-    @SerializedName("logo")
-    val logo: String
-
+    val country: String?
 )
 
 fun DataLeaguesDto.toDomainLeagues() =
     DomainLeagues(
         name = name,
         country = country,
-        logo = logo
-
+        //logo = logo
     )
 
 fun DataLeaguesDto.toLocalLeagues() =
     LeaguesEntity(
         name = name,
         country = country,
-        logo = logo
-
+       // logo = logo
     )

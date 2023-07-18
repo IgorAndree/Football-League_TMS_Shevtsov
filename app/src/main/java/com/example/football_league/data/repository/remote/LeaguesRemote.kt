@@ -1,7 +1,7 @@
 package com.example.football_league.data.repository.remote
 
-import com.example.football_league.data.remote.dto.ResponseDto
+import com.example.football_league.data.remote.dto.ApiDto
 
 interface LeaguesRemote {
-    suspend fun getLeagues(): ResponseDto
+    suspend fun getLeagues(): ApiDto
 }

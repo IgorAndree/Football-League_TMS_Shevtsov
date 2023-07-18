@@ -7,17 +7,12 @@ import com.example.football_league.domain.models.DomainLeagues
 
 @Entity
 data class LeaguesEntity(
-
     @PrimaryKey(autoGenerate = true)
-    var league_id: Int = 0,
-
+    var league_id: Int? = 0,
     @ColumnInfo(name = "name")
     val name: String? = null,
-
     @ColumnInfo(name = "country")
     var country: String? = null,
-
-
     @ColumnInfo(name = "logo")
     var logo: String? = null
 )

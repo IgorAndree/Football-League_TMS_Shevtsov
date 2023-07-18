@@ -14,20 +14,14 @@ import javax.inject.Inject
 open class LeaguesViewModel @Inject constructor(
     private val leaguesUseCase: LeaguesUseCase
 ) : ViewModel() {
-
-
-
-
     private val _leaguesList = MutableLiveData<List<DomainLeagues>>()
     val leaguesList: LiveData<List<DomainLeagues>> = _leaguesList
 
     init {
         viewModelScope.launch {
             getLeagues()
-
         }
     }
-
 
     private suspend fun getLeagues() {
         _leaguesList.value = leaguesUseCase.getLeagues()

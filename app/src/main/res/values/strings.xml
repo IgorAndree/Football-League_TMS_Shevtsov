@@ -11,6 +11,7 @@
     <string name="hint_name_login_text">Please enter your name</string>
     <string name="hint_password_login_text">Please enter your password</string>
     <string name="button_login_text">Login</string>
+    <string name="verification">Minimum characters for name 4 for password 8!!!</string>
 
     <!-- Strings startFragment -->
     <string name="button_start_next_text">Go to clubs</string>

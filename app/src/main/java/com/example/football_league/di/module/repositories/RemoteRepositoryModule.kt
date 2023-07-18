@@ -14,5 +14,6 @@ import javax.inject.Singleton
 class RemoteRepositoryModule {
     @Singleton
     @Provides
-    fun provideLeaguesRemote(leaguesApi: LeaguesApi): LeaguesRemote = LeaguesRemoteImpl(leaguesApi = leaguesApi)
+    fun provideLeaguesRemote(leaguesApi: LeaguesApi): LeaguesRemote =
+        LeaguesRemoteImpl(leaguesApi = leaguesApi)
 }

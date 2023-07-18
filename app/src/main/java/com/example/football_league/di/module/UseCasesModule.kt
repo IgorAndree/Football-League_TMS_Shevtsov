@@ -11,11 +11,10 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 class UseCasesModule {
-//    @Singleton
+    //    @Singleton
 //    @Provides
 //    fun provideClubsUseCase(clubsRepository: ClubsRepository) =
 //        GetClubsUseCase(clubsRepository = clubsRepository)
-
     @Singleton
     @Provides
     fun provideLeaguesUseCase(leaguesRepository: LeaguesRepository) =

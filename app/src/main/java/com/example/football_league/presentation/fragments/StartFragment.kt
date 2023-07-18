@@ -19,27 +19,22 @@ import dagger.hilt.android.AndroidEntryPoint
 class StartFragment : Fragment() {
     private lateinit var binding: FragmentStartBinding
     private val viewModel: LeaguesViewModel by viewModels()
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState:
         Bundle?
     ): View {
-
         binding = FragmentStartBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         initFun()
-
         binding.buttonNext.setOnClickListener {
             findNavController().navigate(R.id.action_StartFragment_to_ClubsFragment)
         }
         binding.buttonBack.setOnClickListener {
             findNavController().navigate(R.id.action_StartFragment_to_LoginFragment)
-
         }
     }
 
@@ -54,9 +49,9 @@ class StartFragment : Fragment() {
     }
 
     private fun initRecycler(leagues: List<DomainLeagues>) {
-        binding.recyclerLeagues.apply {
-            layoutManager = LinearLayoutManager (requireContext())
-              adapter = LeaguesRecyclerAdapter(context,
+        binding.leaguesRecycler.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            adapter = LeaguesRecyclerAdapter(context,
                 items = leagues,
                 onItemClickEvent = {
                     findNavController().navigate(R.id.action_StartFragment_to_ClubsFragment)
