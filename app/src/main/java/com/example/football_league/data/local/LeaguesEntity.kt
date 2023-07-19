@@ -8,7 +8,7 @@ import com.example.football_league.domain.models.DomainLeagues
 @Entity
 data class LeaguesEntity(
     @PrimaryKey(autoGenerate = true)
-    var league_id: Int? = 0,
+    var leagueId: Long? = Math.random().toLong(),
     @ColumnInfo(name = "name")
     val name: String? = null,
     @ColumnInfo(name = "country")

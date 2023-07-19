@@ -8,19 +8,22 @@ data class DataLeaguesDto(
     @SerializedName("name")
     val name: String?,
     @SerializedName("country")
-    val country: String?
+    val country: String?,
+    @SerializedName("logo")
+    val logo: String?
 )
 
 fun DataLeaguesDto.toDomainLeagues() =
     DomainLeagues(
         name = name,
         country = country,
-        //logo = logo
+        logo = logo
     )
 
 fun DataLeaguesDto.toLocalLeagues() =
     LeaguesEntity(
+        leagueId = Math.random().toLong(),
         name = name,
         country = country,
-       // logo = logo
+        logo = logo
     )

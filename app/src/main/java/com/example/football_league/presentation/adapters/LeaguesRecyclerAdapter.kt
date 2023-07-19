@@ -36,6 +36,9 @@ class LeaguesRecyclerAdapter(
         holder.apply {
             titleTextView.text = items[position].name
             descriptionTextView.text = items[position].country
+
+            //TODO попробуй вынеси в DI Glide
+
             Glide
                 .with(context)
                 .load(items[position].logo)

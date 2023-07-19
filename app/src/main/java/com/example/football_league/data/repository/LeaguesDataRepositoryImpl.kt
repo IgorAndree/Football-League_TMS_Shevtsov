@@ -16,13 +16,17 @@ class LeaguesDataRepositoryImpl @Inject constructor(
 ) : LeaguesRepository {
     override suspend fun getLeagues(): List<DataLeaguesDto> {
         val leaguesList = leaguesRemote.getLeagues().results.leagues
-       val values =  leaguesList.values.toMutableList()
-//        if (leaguesList.isNotEmpty()) {
-//            leaguesList.forEach { leaguesDto ->
-//                leaguesLocal.insertLeagues(leagues = values)
-//            }
-//        }
-        return values.toList()
+        val values = leaguesList.values.toMutableList()
+
+        if (leaguesList.isNotEmpty()) {
+            leaguesList.forEach { leaguesDto ->
+                leaguesLocal.insertLeagues(
+                    leaguesDto.value.toLocalLeagues()
+                )
+            }
+        }
+
+        return values
     }
 
     override suspend fun getLocalLeagues(): List<LeaguesEntity> =
@@ -33,5 +37,6 @@ class LeaguesDataRepositoryImpl @Inject constructor(
     }
 
     override suspend fun getLocalRepositoryById(): LeaguesEntity? =
-        leaguesLocal.getById(1)
+        leaguesLocal.getById(leagueId = 1)
+//TODO что делает эта функция, почему она взвращает то, чего нет и не будет (генерацию ключей изучи)
 }

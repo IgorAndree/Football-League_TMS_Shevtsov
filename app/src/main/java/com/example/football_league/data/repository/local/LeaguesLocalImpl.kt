@@ -8,8 +8,9 @@ class LeaguesLocalImpl @Inject constructor(
     private val leaguesDao: LeaguesDao
 ) : LeaguesLocal {
     override suspend fun getLocalLeagues(): List<LeaguesEntity>? = leaguesDao.getAll()
-    override suspend fun getById(league_id: Long): LeaguesEntity? =
-        leaguesDao.getById(league_id)
+
+    override suspend fun getById(leagueId: Long): LeaguesEntity? =
+        leaguesDao.getById(leagueId = leagueId)
 
     override suspend fun insertLeagues(leagues: LeaguesEntity) {
         leaguesDao.insert(leaguesEntity = leagues)

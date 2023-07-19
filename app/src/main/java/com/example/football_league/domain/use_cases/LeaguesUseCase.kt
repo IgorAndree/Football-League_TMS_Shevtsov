@@ -1,6 +1,5 @@
 package com.example.football_league.domain.use_cases
 
-import com.example.football_league.data.remote.dto.DataLeaguesDto
 import com.example.football_league.data.remote.dto.toDomainLeagues
 import com.example.football_league.domain.models.DomainLeagues
 import com.example.football_league.domain.repositories.LeaguesRepository
