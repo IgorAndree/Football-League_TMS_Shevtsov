@@ -11,7 +11,7 @@ import dagger.hilt.components.SingletonComponent
 
 @Module
 @InstallIn(SingletonComponent::class)
-class RepositoryModule {
+internal class RepositoryModule {
     @Provides
     fun provideLeaguesRepository(
         leaguesRemote: LeaguesRemote,

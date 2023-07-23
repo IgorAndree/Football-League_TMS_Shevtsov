@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 import com.example.football_league.domain.models.DomainLeagues
 
 @Entity
-data class LeaguesEntity(
+internal data class LeaguesEntity(
     @PrimaryKey(autoGenerate = true)
     var leagueId: Long? = Math.random().toLong(),
     @ColumnInfo(name = "name")
@@ -16,8 +16,8 @@ data class LeaguesEntity(
     @ColumnInfo(name = "logo")
     var logo: String? = null
 )
-
-fun LeaguesEntity.toLeagues() =
+// TODO Потом будет под клубы
+internal fun LeaguesEntity.toLeagues() =
     DomainLeagues(
         name = name,
         country = country,

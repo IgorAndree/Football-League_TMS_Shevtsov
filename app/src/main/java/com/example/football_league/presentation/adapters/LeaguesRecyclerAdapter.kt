@@ -12,7 +12,7 @@ import com.example.football_league.R
 import com.example.football_league.R.layout.item_leagues_layout
 import com.example.football_league.domain.models.DomainLeagues
 
-class LeaguesRecyclerAdapter(
+internal class LeaguesRecyclerAdapter(
     private var context: Context,
     private val items: List<DomainLeagues>,
     private val onItemClickEvent: (View) -> Unit
@@ -36,9 +36,7 @@ class LeaguesRecyclerAdapter(
         holder.apply {
             titleTextView.text = items[position].name
             descriptionTextView.text = items[position].country
-
             //TODO попробуй вынеси в DI Glide
-
             Glide
                 .with(context)
                 .load(items[position].logo)

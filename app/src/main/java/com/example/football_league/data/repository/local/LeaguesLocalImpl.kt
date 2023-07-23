@@ -4,11 +4,10 @@ import com.example.football_league.data.local.LeaguesDao
 import com.example.football_league.data.local.LeaguesEntity
 import javax.inject.Inject
 
-class LeaguesLocalImpl @Inject constructor(
+internal class LeaguesLocalImpl @Inject constructor(
     private val leaguesDao: LeaguesDao
 ) : LeaguesLocal {
     override suspend fun getLocalLeagues(): List<LeaguesEntity>? = leaguesDao.getAll()
-
     override suspend fun getById(leagueId: Long): LeaguesEntity? =
         leaguesDao.getById(leagueId = leagueId)
 

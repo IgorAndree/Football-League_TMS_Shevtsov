@@ -13,7 +13,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object ApiModule {
+internal object ApiModule {
     private const val URL = "https://api-football-v1.p.rapidapi.com/"
 
     @Singleton

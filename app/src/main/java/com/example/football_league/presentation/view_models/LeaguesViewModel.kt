@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-open class LeaguesViewModel @Inject constructor(
+internal open class LeaguesViewModel @Inject constructor(
     private val leaguesUseCase: LeaguesUseCase
 ) : ViewModel() {
     private val _leaguesList = MutableLiveData<List<DomainLeagues>>()

@@ -4,7 +4,7 @@ import com.example.football_league.data.local.LeaguesEntity
 import com.example.football_league.domain.models.DomainLeagues
 import com.google.gson.annotations.SerializedName
 
-data class DataLeaguesDto(
+internal data class DataLeaguesDto(
     @SerializedName("name")
     val name: String?,
     @SerializedName("country")
@@ -13,14 +13,14 @@ data class DataLeaguesDto(
     val logo: String?
 )
 
-fun DataLeaguesDto.toDomainLeagues() =
+internal fun DataLeaguesDto.toDomainLeagues() =
     DomainLeagues(
         name = name,
         country = country,
         logo = logo
     )
 
-fun DataLeaguesDto.toLocalLeagues() =
+internal fun DataLeaguesDto.toLocalLeagues() =
     LeaguesEntity(
         leagueId = Math.random().toLong(),
         name = name,

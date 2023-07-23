@@ -9,9 +9,9 @@ import com.example.football_league.domain.use_cases.GetClubsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-
+// TODO Сделать под клубы
 @HiltViewModel
-open class ClubsViewModel @Inject constructor(
+internal open class ClubsViewModel @Inject constructor(
     private val getClubsUseCase: GetClubsUseCase
 ) : ViewModel() {
     // TODO Потом прекрепить к Фрагменту с клубами
@@ -20,11 +20,11 @@ open class ClubsViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            getClubs()
+//            getClubs()
         }
     }
 
-    private suspend fun getClubs() {
-        _clubs.value = getClubsUseCase.getClubsById()
-    }
+//    private suspend fun getClubs() {
+//        _clubs.value = getClubsUseCase.getClubsById()
+//    }
 }

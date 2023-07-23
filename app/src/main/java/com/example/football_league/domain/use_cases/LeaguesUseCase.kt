@@ -7,10 +7,10 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class LeaguesUseCase @Inject constructor(
+internal class LeaguesUseCase @Inject constructor(
     private val leaguesRepository: LeaguesRepository
 ) {
-    suspend fun getLeagues():  List<DomainLeagues> =
+    suspend fun getLeagues(): List<DomainLeagues> =
         leaguesRepository.getLeagues().map { leaguesDto ->
             leaguesDto.toDomainLeagues()
         }

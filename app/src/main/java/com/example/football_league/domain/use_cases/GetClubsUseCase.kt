@@ -7,11 +7,11 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class GetClubsUseCase @Inject constructor
+internal class GetClubsUseCase @Inject constructor
     (
     private val leaguesRepository: LeaguesRepository
 ) {
     //TODO Потом переделать под клубы
-    suspend fun getClubsById(): DomainLeagues? =
-        leaguesRepository.getLocalRepositoryById()?.toLeagues()
+//    suspend fun getClubsById(): DomainLeagues? =
+//        leaguesRepository.getLocalRepositoryById()?.toLeagues()
 }

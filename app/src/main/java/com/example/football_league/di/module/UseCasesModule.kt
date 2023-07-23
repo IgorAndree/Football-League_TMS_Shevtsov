@@ -10,8 +10,9 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class UseCasesModule {
-    //    @Singleton
+internal class UseCasesModule {
+    //TODO провайд для клубов
+//        @Singleton
 //    @Provides
 //    fun provideClubsUseCase(clubsRepository: ClubsRepository) =
 //        GetClubsUseCase(clubsRepository = clubsRepository)

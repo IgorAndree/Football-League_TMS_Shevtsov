@@ -15,8 +15,7 @@ const val D_B_LEAGUES = "leagues_db"
 
 @Module
 @InstallIn(SingletonComponent::class)
-object DataBaseModule {
-
+internal object DataBaseModule {
     @Provides
     @Singleton
     fun provideDatabase(

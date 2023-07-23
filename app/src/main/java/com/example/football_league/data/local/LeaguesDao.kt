@@ -3,7 +3,7 @@ package com.example.football_league.data.local
 import androidx.room.*
 
 @Dao
-interface LeaguesDao {
+internal interface LeaguesDao {
     @Query("SELECT * FROM LeaguesEntity")
     suspend fun getAll(): List<LeaguesEntity>?
 

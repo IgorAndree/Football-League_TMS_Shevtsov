@@ -2,7 +2,7 @@ package com.example.football_league.data.repository.local
 
 import com.example.football_league.data.local.LeaguesEntity
 
-interface LeaguesLocal {
+internal interface LeaguesLocal {
     suspend fun getLocalLeagues(): List<LeaguesEntity>?
     suspend fun getById(leagueId: Long): LeaguesEntity?
     suspend fun insertLeagues(leagues: LeaguesEntity)
