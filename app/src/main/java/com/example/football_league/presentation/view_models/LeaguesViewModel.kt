@@ -23,6 +23,7 @@ internal open class LeaguesViewModel @Inject constructor(
         }
     }
 
+
     private suspend fun getLeagues() {
         _leaguesList.value = leaguesUseCase.getLeagues()
     }
