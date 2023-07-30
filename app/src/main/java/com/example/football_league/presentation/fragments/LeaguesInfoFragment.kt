@@ -9,32 +9,31 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.football_league.R
-import com.example.football_league.databinding.FragmentStartBinding
+import com.example.football_league.databinding.FragmentLeaguesInfoBinding
 import com.example.football_league.domain.models.DomainLeagues
-import com.example.football_league.presentation.adapters.StartFragmentRecyclerAdapter
+import com.example.football_league.presentation.adapters.LeaguesRecyclerAdapter
 import com.example.football_league.presentation.view_models.LeaguesViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class StartFragment : Fragment() {
-    private lateinit var binding: FragmentStartBinding
+class LeaguesInfoFragment : Fragment() {
+    private lateinit var binding: FragmentLeaguesInfoBinding
     private val viewModel: LeaguesViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState:
         Bundle?
     ): View {
-        binding = FragmentStartBinding.inflate(inflater, container, false)
+        binding = FragmentLeaguesInfoBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         initFun()
-        binding.buttonNext.setOnClickListener {
-            findNavController().navigate(R.id.action_StartFragment_to_LeaguesInfoFragment)
-        }
-        binding.buttonBackToLogin.setOnClickListener {
-            findNavController().navigate(R.id.action_StartFragment_to_LoginFragment)
+
+        binding.buttonBackToStart.setOnClickListener {
+            findNavController().navigate(R.id.action_LeaguesInfoFragment_to_StartFragment)
         }
     }
 
@@ -51,13 +50,10 @@ class StartFragment : Fragment() {
     private fun initRecycler(leagues: List<DomainLeagues>) {
         binding.leaguesRecycler.apply {
             layoutManager = LinearLayoutManager(requireContext())
-            adapter = StartFragmentRecyclerAdapter(context,
-                items = leagues,
-                onItemClickEvent = {
-                    findNavController().navigate(R.id.action_StartFragment_to_LeaguesInfoFragment)
-                }
+            adapter = LeaguesRecyclerAdapter(
+                context,
+                items = leagues
             )
         }
     }
 }
-

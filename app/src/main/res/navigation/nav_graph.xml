@@ -11,12 +11,10 @@
         android:id="@+id/LoginFragment"
         android:name="com.example.football_league.presentation.fragments.LoginFragment"
         android:label="@string/login_fragment_label"
-        tools:layout="@layout/fragment_login">
-
+        tools:layout="@layout/fragment_login"/>
     <action
         android:id="@+id/action_LoginFragment_to_StartFragment"
         app:destination="@id/StartFragment" />
-    </fragment>
 
     <fragment
         android:id="@+id/StartFragment"
@@ -25,13 +23,15 @@
     <action
         android:id="@+id/action_StartFragment_to_LoginFragment"
         app:destination="@id/LoginFragment" />
-
     <action
-        android:id="@+id/action_StartFragment_to_ClubsFragment"
-        app:destination="@id/ClubsFragment" />
-    <fragment
-        android:id="@+id/ClubsFragment"
-        android:name="com.example.football_league.presentation.fragments.ClubsFragment"
-        tools:layout="@layout/fragment_clubs"/>
+        android:id="@+id/action_StartFragment_to_LeaguesInfoFragment"
+        app:destination="@id/LeaguesInfoFragment" />
 
+    <fragment
+        android:id="@+id/LeaguesInfoFragment"
+        android:name="com.example.football_league.presentation.fragments.LeaguesInfoFragment"
+        tools:layout="@layout/fragment_leagues_info"/>
+    <action
+        android:id="@+id/action_LeaguesInfoFragment_to_StartFragment"
+        app:destination="@id/StartFragment" />
 </navigation>

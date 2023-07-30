@@ -11,11 +11,6 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 internal class UseCasesModule {
-    //TODO провайд для клубов
-//        @Singleton
-//    @Provides
-//    fun provideClubsUseCase(clubsRepository: ClubsRepository) =
-//        GetClubsUseCase(clubsRepository = clubsRepository)
     @Singleton
     @Provides
     fun provideLeaguesUseCase(leaguesRepository: LeaguesRepository) =

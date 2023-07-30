@@ -14,7 +14,10 @@
     <string name="verification">Minimum characters for name 4 for password 8!!!</string>
 
     <!-- Strings startFragment -->
-    <string name="button_start_next_text">Go to clubs</string>
+    <string name="button_start_next_text">Go to info</string>
     <string name="button_start_back_text">Back to login</string>
+
+    <!-- Strings leaguesInfoFragment -->
+    <string name="button_leagues_back_text">Back to start</string>
 
 </resources>

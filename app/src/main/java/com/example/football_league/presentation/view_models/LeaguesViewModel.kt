@@ -19,10 +19,10 @@ internal open class LeaguesViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
+
             getLeagues()
         }
     }
-
 
     private suspend fun getLeagues() {
         _leaguesList.value = leaguesUseCase.getLeagues()

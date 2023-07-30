@@ -11,7 +11,7 @@ internal interface LeaguesApi {
 
     //TODO add to constants (Сдесь можно только через @Headers)
     @Headers(
-        "X-RapidAPI-Key: Enter a Key",
+        "X-RapidAPI-Key: Enter a key",
         "X-RapidAPI-Host: api-football-v1.p.rapidapi.com"
     )
     @GET(GET_REQUEST)

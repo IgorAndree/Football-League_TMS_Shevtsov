@@ -12,6 +12,6 @@ import dagger.hilt.components.SingletonComponent
 @InstallIn(SingletonComponent::class)
 internal class LocalRepositoryModule {
     @Provides
-    fun providePostsLocal(leaguesDao: LeaguesDao): LeaguesLocal =
+    fun provideLeaguesLocal(leaguesDao: LeaguesDao): LeaguesLocal =
         LeaguesLocalImpl(leaguesDao = leaguesDao)
 }

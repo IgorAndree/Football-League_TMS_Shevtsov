@@ -30,10 +30,7 @@ internal class LeaguesDataRepositoryImpl @Inject constructor(
     override suspend fun getLocalLeagues(): List<LeaguesEntity> =
         leaguesLocal.getLocalLeagues().orEmpty()
 
-    override suspend fun getClubsFromLocal(): LeaguesEntity? {
+    override suspend fun getLeaguesInfoFromLocal(): LeaguesEntity? {
         return null
     }
-//TODO Потом будет под клубы
- //   override suspend fun getLocalRepositoryById(): LeaguesEntity? =
-  //      leaguesLocal.getById(leagueId = 1)
 }

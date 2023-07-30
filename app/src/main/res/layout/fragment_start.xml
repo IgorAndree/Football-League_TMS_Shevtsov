@@ -21,7 +21,7 @@
         style="@style/Widget.AppCompat.Button.Borderless.Colored"/>
 
     <Button
-        android:id="@+id/button_back"
+        android:id="@+id/button_back_to_login"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:text="@string/button_start_back_text"
@@ -36,4 +36,15 @@
         android:layout_height="match_parent"
         android:layout_gravity="center"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    <ProgressBar
+        android:id="@+id/plash_progress_loading"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/plash_text_loading"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.667" />
 </LinearLayout>

@@ -17,11 +17,9 @@
         <activity
             android:name=".presentation.activity.MainActivity"
             android:exported="true"/>
-
         <activity
             android:name=".presentation.activity.SplashActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
