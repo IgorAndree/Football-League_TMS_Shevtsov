@@ -14,6 +14,7 @@ internal interface LeaguesApi {
         "X-RapidAPI-Key: Enter a key",
         "X-RapidAPI-Host: api-football-v1.p.rapidapi.com"
     )
+
     @GET(GET_REQUEST)
     suspend fun getLeagues(): ApiDto
 }
